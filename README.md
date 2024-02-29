@@ -6,5 +6,5 @@ This is part of the Odin project learning curriculum to show case foundational J
 - Incase you are curious to know this game history, [check out here.](https://en.wikipedia.org/wiki/Rock_paper_scissors)
 
 ## Check it out!
-- Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
-- Be Sure to Open your open your console(Inspect/Developer Tools), then reload page to follow the results in the console
+- First Open your console(Inspect/Developer Tools), before going to the link below to follow the results.
+-Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
