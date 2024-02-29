@@ -5,15 +5,9 @@ function getComputerChoice() {
 }
 
 const compChoice = getComputerChoice();
-console.log("Computer Choice is:" + compChoice);
-const playerChoice = prompt('"Rock", "Paper" or "Scissors"? Enter your choice');
-
-var compWins = 0;
-var playerWins = 0;
-var roundCount = 0;
 
 function playOneRound(playerChoice, compChoice) {
-  roundCount++;
+  console.log("Computer Choice is:" + compChoice);
 
   if (
     (playerChoice.toLowerCase() == "rock" &&
@@ -23,25 +17,55 @@ function playOneRound(playerChoice, compChoice) {
     (playerChoice.toLowerCase() == "scissors" &&
       compChoice.toLowerCase() == "paper")
   ) {
-    playerWins++;
     console.log(`Ta-daa! Its a Win! ${playerChoice} beats ${compChoice}`);
     return "Win";
   } else if (playerChoice.toLowerCase() == compChoice.toLowerCase()) {
     console.log(`What a Tie! Its ${playerChoice} and ${compChoice}`);
     return "Tie";
   } else {
-    compWins++;
     console.log(`Oops! You Loose! ${compChoice} beats ${playerChoice}`);
     return "Lose";
   }
-};
-
+}
 
 function playGame() {
-  let roundCount = 0
-  for (roundCount ; roundCount < 5; roundCount++) {}
+  let roundCount = 1;
+  let playerWins = 0;
+  let compWins = 0;
 
-};
+  for (roundCount; roundCount <= 5; ++roundCount) {
+    console.log(`Current Round: ${roundCount}`);
 
-console.log(playOneRound(playerChoice, compChoice));
-console.log(`Your Wins: ${playerWins} \nComputer Wins: ${compWins} \nRounds: ${roundCount}`);
+    const playerChoice = prompt(
+      '"Rock", "Paper" or "Scissors"? Enter your choice'
+    );
+
+    let winner = playOneRound(playerChoice, compChoice);
+
+    if (winner == "Win") {
+      playerWins++;
+    } else if (winner == "Lose") {
+      compWins++;
+    }
+  }
+
+  console.log(
+    `Here is your Overall game Summary \nTotal Rounds: ${
+      roundCount - 1
+    } \nYour Wins: ${playerWins} \nComputer Wins: ${compWins} \n`
+  );
+
+  if (playerWins == compWins) {
+    console.log(
+      `Chei!!! NO overall winner, you tied with ${playerWins} / ${compWins}`
+    );
+  } else if (playerWins > compWins) {
+    console.log(`You are overall winner with ${playerWins} / ${compWins}`);
+  } else {
+    console.log(
+      `Computer is the OverAll winner with ${compWins} / ${playerWins}`
+    );
+  }
+}
+
+console.log(playGame());
