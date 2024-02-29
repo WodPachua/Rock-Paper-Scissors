@@ -1,0 +1,11 @@
+html {
+    font-family: sans-serif;
+  }
+  body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 600px;
+    margin: 0 auto;
+    background-color: khaki;
+    text-align: center;
+  }
