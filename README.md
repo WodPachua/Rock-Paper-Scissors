@@ -7,3 +7,4 @@ This is part of the Odin project learning curriculum to show case foundational J
 
 ## Check it out!
 - Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
+- Be Sure to Open your open your console(Inspect/Developer Tools), then reload page to follow the results in the console
