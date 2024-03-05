@@ -6,5 +6,6 @@ This is part of the Odin project learning curriculum to show case foundational J
 - Incase you are curious to know this game history, [check out here.](https://en.wikipedia.org/wiki/Rock_paper_scissors)
 
 ## Check it out!
-- First Open your console(Inspect/Developer Tools), before going to the link below to follow the results.
--Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
+- The game allows you to play only 5 rounds, then displays the overall winner. The computer choices are randomly generated for each round to ensure the game is fair.
+- If you wish to continue or play again after your five rounds, simply refresh the page. Enjoy!
+- Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
