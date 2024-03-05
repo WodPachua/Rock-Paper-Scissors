@@ -1,13 +1,35 @@
+const rockButton = document.querySelector(".Rock");
+const paperButton = document.querySelector(".Paper");
+const scissorsButton = document.querySelector(".Scissors");
+const winnerText = document.querySelector(".rounds-winner");
+const logsText = document.querySelector(".rounds-logs");
+
+let roundCount = 0;
+let playerWins = 0;
+let compWins = 0;
+let ties = 0;
+
+rockButton.addEventListener("click", playOneRound);
+paperButton.addEventListener("click", playOneRound);
+scissorsButton.addEventListener("click", playOneRound);
+
 function getComputerChoice() {
   const choices = ["Rock", "Paper", "Scissors"];
   randomChoice = Math.floor(Math.random() * 3);
   return choices[randomChoice];
 }
 
-const compChoice = getComputerChoice();
+function playOneRound(event) {
+  if (roundCount >= 5) {
+    return;
+  }
 
-function playOneRound(playerChoice, compChoice) {
-  console.log("Computer Choice is:" + compChoice);
+  const playerChoice = event.target.getAttribute("class");
+  const compChoice = getComputerChoice();
+
+  winnerText.innerHTML = `<h2 class="logs">Round: ${roundCount + 1}</h2>`;
+  roundCount++;
+  logsText.innerHTML = "Computer Shows: " + compChoice;
 
   if (
     (playerChoice.toLowerCase() == "rock" &&
@@ -17,55 +39,25 @@ function playOneRound(playerChoice, compChoice) {
     (playerChoice.toLowerCase() == "scissors" &&
       compChoice.toLowerCase() == "paper")
   ) {
-    console.log(`Ta-daa! Its a Win! ${playerChoice} beats ${compChoice}`);
-    return "Win";
+    logsText.innerHTML += `<h3 class="logs">👏🏼 So you Win! Ta-daa! ${playerChoice} beats ${compChoice} 👏🏼<h3/>`;
+    playerWins++;
   } else if (playerChoice.toLowerCase() == compChoice.toLowerCase()) {
-    console.log(`What a Tie! Its ${playerChoice} and ${compChoice}`);
+    logsText.innerHTML += `<h3 class="logs">😊 What a Tie! Its ${playerChoice} and ${compChoice} 😊</h3>`;
     return "Tie";
   } else {
-    console.log(`Oops! You Loose! ${compChoice} beats ${playerChoice}`);
-    return "Lose";
+    logsText.innerHTML += `<h3 class="logs">🤪 So you Loose! Oops! ${compChoice} beats ${playerChoice} 🤪</h3>`;
+    compWins++;
   }
-}
 
-function playGame() {
-  let roundCount = 1;
-  let playerWins = 0;
-  let compWins = 0;
+  if (roundCount == 5) {
+    logsText.innerHTML = `<h3>Here is your Overall game Summary ℹ️</h3><p>Total Rounds: ${roundCount} </p><p>Your Wins: ${playerWins} </p><p>Computer Wins: ${compWins} </p>`;
 
-  for (roundCount; roundCount <= 5; ++roundCount) {
-    console.log(`Current Round: ${roundCount}`);
-
-    const playerChoice = prompt(
-      '"Rock", "Paper" or "Scissors"? Enter your choice'
-    );
-
-    let winner = playOneRound(playerChoice, compChoice);
-
-    if (winner == "Win") {
-      playerWins++;
-    } else if (winner == "Lose") {
-      compWins++;
+    if (playerWins == compWins) {
+      logsText.innerHTML += `<h3 class="logs">Chei!!! 🤞 NO overall winner, you tied with ${playerWins} / ${compWins}</h3>`;
+    } else if (playerWins > compWins) {
+      logsText.innerHTML += `<h3 class="logs">🎊🎉You are overall winner with ${playerWins} / ${compWins} 💪🏻💪🏻</h3>`;
+    } else {
+      logsText.innerHTML += `<h3 class="logs">🖥 Computer is the OverAll winner with ${compWins} / ${playerWins} 😑</h3>`;
     }
   }
-
-  console.log(
-    `Here is your Overall game Summary \nTotal Rounds: ${
-      roundCount - 1
-    } \nYour Wins: ${playerWins} \nComputer Wins: ${compWins} \n`
-  );
-
-  if (playerWins == compWins) {
-    console.log(
-      `Chei!!! NO overall winner, you tied with ${playerWins} / ${compWins}`
-    );
-  } else if (playerWins > compWins) {
-    console.log(`You are overall winner with ${playerWins} / ${compWins}`);
-  } else {
-    console.log(
-      `Computer is the OverAll winner with ${compWins} / ${playerWins}`
-    );
-  }
 }
-
-console.log(playGame());
