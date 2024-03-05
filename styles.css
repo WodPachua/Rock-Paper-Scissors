@@ -36,6 +36,16 @@
     background-color: #0078D4;
     color: whitesmoke;
     font-weight: bolder;
+    transition: transform 0.2s ease;
+  }
+
+  button:hover {
+    transform: scale(1.03);
+  }
+
+  button:active {
+    transform: scale(0.9);
+    background-color: darkcyan;
   }
 
   .results-container {
@@ -47,9 +57,12 @@
 
   .rounds-winner {
     flex: 1;
+    padding: 3px;
   }
 
   .rounds-logs {
     flex: 3;
+    background-color: lightskyblue;
+    padding: 10px;
   }
 
