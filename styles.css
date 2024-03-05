@@ -72,6 +72,9 @@
     border: none;
     margin-top: 10px;
     color: #0078D4;
-    font
   }
 
+.summary {
+  padding: 3px;
+  border: none;
+}

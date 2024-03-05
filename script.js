@@ -50,7 +50,8 @@ function playOneRound(event) {
   }
 
   if (roundCount == 5) {
-    logsText.innerHTML = `<h3>Here is your Overall game Summary ℹ️</h3><p>Total Rounds: ${roundCount} </p><p>Your Wins: ${playerWins} </p><p>Computer Wins: ${compWins} </p>`;
+    logsText.innerHTML = `<h3 class="summary">Here is your Overall game Summary ℹ️</h3 class="summary"><p class="summary">Total Rounds: 
+    ${roundCount} </p><p class="summary">Your Wins: ${playerWins} </p><p class="summary">Computer Wins: ${compWins} </p>`;
 
     if (playerWins == compWins) {
       logsText.innerHTML += `<h3 class="logs">Chei!!! 🤞 NO overall winner, you tied with ${playerWins} / ${compWins}</h3>`;
