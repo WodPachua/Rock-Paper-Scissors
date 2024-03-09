@@ -1,11 +1,18 @@
 * {
   margin: 0;
   padding: 0;
-  border: 2px solid whitesmoke;
   text-align: center;
   border-radius: 2%;
 }
-  
+
+body {
+  background-color: darkslategray;
+}
+  h1 {
+    color: darkslategray;
+    margin: 10px;
+    padding: 5px;
+  }
   .container {
     width: 50%;
     max-width: 800px;
@@ -37,17 +44,20 @@
     color: whitesmoke;
     font-weight: bolder;
     transition: transform 0.2s ease;
+    border: none;
+    margin: 1px;
   }
 
   button:hover {
     transform: scale(1.03);
-    background-color: lightblue;
-    color: black;
+    background-color: darkslategray;
+    color: whitesmoke;
+    border-left: 1px solid khaki;
   }
 
   button:active {
     transform: scale(0.9);
-    background-color: lightblue;
+    background-color: #0078D4;
     border: none;
   }
 
@@ -85,13 +95,11 @@
 .clear-button {
   margin: 5px;
   padding: 5px;
-  border: 5px solid whitesmoke;
   border-radius: 5px;
 }
 
 .clear-button:hover {
   transform: scale(1.1);
-  background-color: lightblue;
 }
 
 .clear-button:active {
