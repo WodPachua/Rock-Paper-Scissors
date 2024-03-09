@@ -41,11 +41,14 @@
 
   button:hover {
     transform: scale(1.03);
+    background-color: lightblue;
+    color: black;
   }
 
   button:active {
     transform: scale(0.9);
-    background-color: darkcyan;
+    background-color: lightblue;
+    border: none;
   }
 
   .results-container {
@@ -77,4 +80,20 @@
 .summary {
   padding: 3px;
   border: none;
+}
+
+.clear-button {
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.clear-button:hover {
+  transform: scale(1.1);
+  background-color: lightblue;
+}
+
+.clear-button:active {
+  transform: scale(0.9);
 }
