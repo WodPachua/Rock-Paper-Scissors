@@ -8,4 +8,4 @@ This is part of the Odin project learning curriculum to show case foundational J
 ## Check it out!
 - The game allows you to play only 5 rounds, then displays the overall winner. The computer choices are randomly generated for each round to ensure the game is fair.
 - If you wish to continue or play again after your five rounds, simply refresh the page. Enjoy!
-- Play Live game [here!](https://wodpachua.github.io/Rock-Paper-Scissors/)
+- Play Live game [here!](https://agile-learning-institute.github.io/member-moses-rock-paper-scissors/)
