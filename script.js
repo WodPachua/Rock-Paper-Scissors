@@ -39,7 +39,7 @@ function playOneRound(event) {
     (playerChoice.toLowerCase() == "scissors" &&
       compChoice.toLowerCase() == "paper")
   ) {
-    logsText.innerHTML += `<h3 class="logs">👏🏼 So you Win! Ta-daa! ${playerChoice} beats ${compChoice} 👏🏼<h3/>`;
+    logsText.innerHTML += `<h3 class="logs">👏🏼 So you Win! Ta-daa! ${playerChoice} beats ${compChoice} 👏🏼</h3>`;
     playerWins++;
   } else if (playerChoice.toLowerCase() == compChoice.toLowerCase()) {
     logsText.innerHTML += `<h3 class="logs">😊 What a Tie! Its ${playerChoice} and ${compChoice} 😊</h3>`;
