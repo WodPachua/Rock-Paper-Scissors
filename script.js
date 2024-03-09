@@ -3,6 +3,7 @@ const paperButton = document.querySelector(".Paper");
 const scissorsButton = document.querySelector(".Scissors");
 const winnerText = document.querySelector(".rounds-winner");
 const logsText = document.querySelector(".rounds-logs");
+const restartButton = document.querySelector(".clear-button");
 
 let roundCount = 0;
 let playerWins = 0;
@@ -12,6 +13,7 @@ let ties = 0;
 rockButton.addEventListener("click", playOneRound);
 paperButton.addEventListener("click", playOneRound);
 scissorsButton.addEventListener("click", playOneRound);
+restartButton.addEventListener("click", restart);
 
 function getComputerChoice() {
   const choices = ["Rock", "Paper", "Scissors"];
@@ -61,4 +63,14 @@ function playOneRound(event) {
       logsText.innerHTML += `<h3 class="logs">🖥 Computer is the OverAll winner with ${compWins} / ${playerWins} 😑</h3>`;
     }
   }
+}
+
+function restart() {
+  roundCount = 0;
+  playerWins = 0;
+  compWins = 0;
+  ties = 0;
+
+  winnerText.innerHTML = ""; 
+  logsText.innerHTML = "";
 }
